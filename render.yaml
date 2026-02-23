@@ -4,13 +4,13 @@ services:
     name: documenso-app
     plan: free
     buildCommand: npm i && npm run build
-    startCommand: npx prisma migrate deploy --schema packages/prisma/schema.prisma && npx turbo run start --filter=@documenso/remix
+    startCommand: npx prisma migrate deploy --schema packages/prisma/schema.prisma && npx turbo run build start --filter=@documenso/remix
     healthCheckPath: /api/health
 
     envVars:
       # Node Version
       - key: NODE_VERSION
-        value: 18.17.0
+        value: 22.0.0
 
       - key: PORT
         value: 10000
